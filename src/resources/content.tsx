@@ -2,20 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Rajat",
+  lastName: "Mishra",
+  name: `Rajat Mishra`,
+  role: "full-stack developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "rajatmishra1333@gmail.com",
+  location: "Asia/Kolkata", // Ludhiana, India ke liye IANA time zone
+  languages: ["English", "Hindi", "Punjabi"],
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>My weekly newsletter about web development and technology</>,
 };
 
 const social: Social = [
@@ -24,17 +24,17 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/RajatMishra1333",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/rajat2458",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/rajatmishra_15/",
   },
   {
     name: "Email",
@@ -49,12 +49,14 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Think. Design.
+    Develop. Launch.
+    Repeat.</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">AllCreates</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -65,7 +67,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
+      I'm Rajat Mishra, a Web Developer at{" "}
       <Logo
         dark
         icon="/trademarks/wordmark-dark.svg"
@@ -91,16 +93,14 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://wa.me/917800582481?text=HII!! I want to sechedule a call meeting with you.",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Rajat is a Ludhiana-based full-stack developer with hands-on experience in building responsive web applications and e-commerce platforms. Proficient in the MERN stack, he has a strong focus on clean code practices and scalable architecture
       </>
     ),
   },
@@ -114,36 +114,43 @@ const about: About = {
         role: "Senior Design Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Designed and developed a professional showcase website for a
+            Chartered Accountant to highlight services and achievements.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Implemented a clean, responsive, and SEO-friendly UI for mobile
+            and desktop.
+          </>,
+          <>
+            Integrated interactive sections for client testimonials, contact
+            forms, and service inquiries.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "AllCreates Project",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Wellship Clinic",
+        timeframe: "May 2023 - Dec 2023",
+        role: "Full-Stack Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed and developed a responsive healthcare website from scratch
+            (SDLC).
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Implemented appointment booking, services section, and Google
+            Maps API.
+          </>,
+          <>
+            Built contact forms with backend integration for data collection.
           </>,
         ],
         images: [],
@@ -151,108 +158,88 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Bachelor of Commerce (B.Com)",
+        description: <>Aug 2024 - Pursuing (CGPA: 7.1)</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Senior Secondary School",
+        description: <>Aug 2023 - Jul 2024 (71%)</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Frameworks & Libraries",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Proficient in the MERN stack and modern styling libraries.</>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "React.js", icon: "react" },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "Express.js", icon: "express" }, // Icon might not exist
+          { name: "Tailwind CSS", icon: "tailwind" },
+          { name: "Bootstrap", icon: "bootstrap" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Database & Tools",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Experienced with NoSQL/SQL databases and development tools.</>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "MySQL", icon: "mysql" },
+          { name: "Git", icon: "git" },
+          { name: "GitHub", icon: "github" },
+          { name: "DevOps", icon: "devops" }, // Icon might not exist
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Programming Languages",
+        description: (
+          <>Core languages for web and backend development.</>
+        ),
+        tags: [
+          { name: "JavaScript", icon: "javascript" },
+          { name: "Python", icon: "python" },
+          { name: "HTML5", icon: "html" },
+          { name: "CSS3", icon: "css" },
+          { name: "SQL", icon: "sql" }, // Icon might not exist
         ],
-      },  
+        images: [],
+      },
     ],
   },
 };
-
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about web development and tech...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
+// Create new blog posts by adding a new .mdx file to app/blog/posts
+// All posts will be listed on the /blog route
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Full-stack and web projects by ${person.name}`,
 };
-
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
