@@ -1,8 +1,48 @@
 ---
-title: "Localized version of Magic Portfolio"
-summary: "Magic Portfolio was localized by François Hernandez."
-publishedAt: "2025-04-15"
-tag: "Magic Portfolio"
+title: "The Art of Hunger: Engineering a Food Delivery UI"
+summary: "How I used modern CSS and React state management to build a responsive, animation-rich food ordering platform."
+publishedAt: "2025-07-20"
+tag: "UI/UX Design"
 ---
 
-In the latest version of Magic Portfolio, localization is no longer supported. However, the localized version created by [François Hernandez](https://github.com/francoishernandez) is still available as a [separate branch](https://github.com/once-ui-system/magic-portfolio/tree/localization-(Once-UI-0.4.2)). This branch will not receive further updates.
+When building a **Food Ordering Website**, the user experience (UX) is just as important as the backend. If the menu doesn't look appetizing or the "Add to Cart" button isn't snappy, the conversion rate drops.
+
+For this project, I moved beyond standard layouts to focus on **Mobile-First Design** and **Micro-interactions**.
+
+## Mobile-First Architecture
+
+Since most users order food from their phones, I designed the grid system to be collapsible. I utilized CSS Grid and Flexbox to ensure that the attractive food menu display remained consistent across devices.
+
+<Feedback
+    icon
+    variant="info"
+    marginBottom="16"
+    title="Responsive Strategy"
+    description="I implemented a fluid grid system that shifts from a 3-column layout on desktop to a single-column, touch-optimized card view on mobile."
+/>
+
+## State Management: The Shopping Cart
+
+The core complexity of a food app is the cart. It needs to persist across pages and update instantly. Here is a snippet of the React Context I built to handle the "Add to Cart" functionality.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="8-10"
+    codes={[
+      {
+        code:
+`export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    setCart((prev) => {
+      // Check if item already exists
+      const existing = prev.find((i) => i.id === item.id);
+      if (existing) {
+        return prev.map((i) =>
+          i.id === item.id ? { ...i, qty: i.qty + 1 } : i
+        );
+      }
+      return [...prev, { ...item, qty: 1 }];
+    });
+  };

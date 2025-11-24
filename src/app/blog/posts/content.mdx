@@ -1,117 +1,179 @@
 ---
-title: "Updating the content of Magic Portfolio"
-summary: "Personalize the portfolio template with your own content."
-publishedAt: "2025-04-18"
-tag: "Magic Portfolio"
+title: "Behind the Code: Meet Rajat Mishra"
+publishedAt: "2025-12-01"
+summary: "Full Stack Developer, agency owner, and problem solver from Ludhiana. Here is the code behind who I am."
+tag: "Personal"
 ---
 
-## Avatar
+Hello! [cite_start]I am **Rajat Mishra**, a Full Stack Developer based in **Ludhiana, Punjab**[cite: 2, 5].
 
-Replace the `public/images/avatar.jpg` file with your own avatar image. It is used on the `/about` page as well as on the dynamically generated `open-graph` images.
+[cite_start]While I am currently pursuing my Bachelor of Commerce[cite: 50], my true passion lies in engineering digital solutions. Over the last few years, I have transitioned from a web designer to a MERN stack specialist, eventually launching my own agency, **allcreates**.
 
-## Favicon
+## Defining the Developer
 
-Replace the `src/app/favicon.ico` file with your own favicon.
+To understand how I work, it is best to look at the raw data. Here is my profile defined as a Javascript object.
 
-## Content
-
-Replace the content in the `resources/content.js` file with your own content. You can use custom components in most cases, since the props are usually declared as `ReactNode` instead of `string`, but it's important that you need to import them in the file.
-
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
 <CodeBlock
-    marginBottom="16"
-    highlight="1-2"
+    radius="none"
+    topRadius="l"
     codes={[
-  {
-    code:
-`import { InlineCode } from "@once-ui-system/core";
-import Link from "next/link";
-
-const person = {
-  ...
+      {
+        code:
+`const rajat = {
+  role: "Full Stack Developer",
+  location: "Ludhiana, India",
+  experience: "4+ Years",
+  hardSkills: [
+    "MERN Stack (MongoDB, Express, React, Node)",
+    "Next.js & TypeScript",
+    "DevOps & Database Architecture"
+  ],
+  softSkills: [
+    "Problem-solving", 
+    "Result-oriented", 
+    "Collaboration"
+  ],
+  currentFocus: "Building scalable agency solutions"
 };`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+        language: "javascript",
+        label: "developerProfile.js"
+      }
+    ]}
+/>
+</Column>
 
-The imports above would let us use `InlineCode` and `Link` components in the content file.
+## The Journey So Far
 
-### Personal details
+[cite_start]I have hands-on experience delivering end-to-end projects, from e-commerce platforms to healthcare solutions[cite: 10, 23, 29]. Here is a snapshot of my professional timeline.
 
-Your personal details are used across the whole app to render personalized headings, labels and images. Languages are displayed on the `/about` page, and location and time in the header.
-
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
 <CodeBlock
-    marginBottom="16"
-    highlight="2-3,7-10"
+    radius="none"
+    topRadius="l"
+    preview={
+    <Table 
+      data={{
+        headers: [
+          { content: "Role", key: "role", sortable: true },
+          { content: "Company/Project", key: "company", sortable: true },
+          { content: "Impact", key: "impact" }
+        ],
+        rows: [
+          ["Founder/Dev", "allcreates", "Building AI-powered local business tools"],
+          ["Freelance", "CA Portfolio", "SEO-friendly showcase for financial services"],
+          ["Frontend Dev", "BigSmall", "E-commerce platform with adv. filtering"],
+          ["Full Stack", "Wellship Clinic", "Complete SDLC & Appointment System"]
+        ]
+      }}
+    />}
     codes={[
-  {
-    code:
-`const person = {
-    firstName: "Selene",
-    lastName: "Yu",
-    get name() {
-      return "...";
-    },
-    role: "Design Engineer",
-    avatar: "/images/avatar.jpg",
-    location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-};`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+      {
+        code:
+`<Table 
+  data={{
+    headers: [
+      { content: "Role", key: "role", sortable: true },
+      { content: "Company/Project", key: "company", sortable: true },
+      { content: "Impact", key: "impact" }
+    ],
+    rows: [
+      ["Founder/Dev", "allcreates", "Building AI-powered local business tools"],
+      ["Freelance", "CA Portfolio", "SEO-friendly showcase for financial services"],
+      ["Frontend Dev", "BigSmall", "E-commerce platform with adv. filtering"],
+      ["Full Stack", "Wellship Clinic", "Complete SDLC & Appointment System"]
+    ]
+  }}
+/>`,
+        language: "tsx",
+        label: "Experience.tsx"
+      }
+    ]}
+/>
+</Column>
 
-### Social links
+## Technical Arsenal
 
-Social links are rendered on the `/about` page and in the footer based on the array configured in the `social` object. You can set custom icons to each, but don't forget to import them in `src/once-ui/icons.ts`. Read the Once UI documentation](https://once-ui.com/docs/icons) for more information.
+[cite_start]My development philosophy centers on **clean code practices and scalable architecture**[cite: 9]. I utilize a modern stack to ensure performance and security.
 
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
 <CodeBlock
-    marginBottom="16"
+    radius="none"
+    topRadius="l"
+    preview={
+    <Grid
+      fillWidth
+      columns="3"
+      s={{columns: 1}}
+      gap="16"
+    >
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text variant="heading-strong-s">Core Stack</Text>
+        <Text variant="body-default-s" onBackground="neutral-weak">React.js, Node.js, Express.js</Text>
+      </Column>
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text variant="heading-strong-s">Database</Text>
+        <Text variant="body-default-s" onBackground="neutral-weak">MongoDB, MySQL, Aggregations</Text>
+      </Column>
+      <Column border="neutral-alpha-medium" padding="16" radius="m">
+        <Text variant="heading-strong-s">Security</Text>
+        <Text variant="body-default-s" onBackground="neutral-weak">JWT Auth, Encryption, REST APIs</Text>
+      </Column>
+    </Grid>}
+    codeHeight={24}
     codes={[
-  {
-    code:
-`const social = [
-    {
-      name: "GitHub",
-      icon: "github",
-      link: "https://github.com/once-ui-system/nextjs-starter",
-    },
-    {
-      name: "Email",
-      icon: "email",
-      link: "mailto:lorant@once-ui.com",
-    },
-];`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+      {
+        code:
+`<Grid
+    fillWidth
+    columns="3"
+    s={{columns: 1}}
+    gap="16"
+  >
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text variant="heading-strong-s">Core Stack</Text>
+      <Text variant="body-default-s" onBackground="neutral-weak">React.js, Node.js, Express.js</Text>
+    </Column>
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text variant="heading-strong-s">Database</Text>
+      <Text variant="body-default-s" onBackground="neutral-weak">MongoDB, MySQL, Aggregations</Text>
+    </Column>
+    <Column border="neutral-alpha-medium" padding="16" radius="m">
+      <Text variant="heading-strong-s">Security</Text>
+      <Text variant="body-default-s" onBackground="neutral-weak">JWT Auth, Encryption, REST APIs</Text>
+    </Column>
+</Grid>`,
+        language: "tsx",
+        label: "TechStack.tsx"
+      }
+    ]}
+/>
+</Column>
 
-### Pages
+## Beyond Coding
 
-Each page have it's own object that manages the personalized content, such as headings, subheadings, images and dynamic data.
+[cite_start]When I am not debugging code or managing databases for my **Secrets Storage App**[cite: 32], I am focused on self-improvement and business growth.
 
+<Column fillWidth gap="-1" marginBottom="16" marginTop="8">
 <CodeBlock
-    marginBottom="16"
+    radius="none"
+    topRadius="l"
+    codeHeight={24}
+    preview={<Feedback icon title="Current Mission" variant="info" description="Leveraging AI and automation to help local businesses in Ludhiana scale their operations." marginBottom="24"/>}
     codes={[
-  {
-    code:
-`const home = {
-    label: "Home",
-    title: "Selene Yu's Portfolio",
-    description: "Portfolio website showcasing my work as a Design Engineer",
-    headline: <>Design engineer and builder</>,
-    subline: (
-      <>
-        I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-        <br /> user experiences. After hours, I build my own projects.
-      </>
-    ),
-};`,
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+      {
+        code:
+`<Feedback
+    icon
+    variant="info"
+    title="Current Mission"
+    description="Leveraging AI and automation to help local businesses in Ludhiana scale their operations."
+/>`,
+        language: "tsx",
+        label: "Mission.tsx"
+      }
+    ]}
+/>
+</Column>
 
-The `label` property is used in the header navigation. The `title` property is used for the page title and the `description` property is used for the page description. They are also used in meta- and open graph tags.
+If you are looking for a developer who understands both **logic and business**, let's build something together.

@@ -34,7 +34,7 @@ const social: Social = [
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/rajatmishra_15/",
+    link: "https://www.instagram.com/rajat_2458/",
   },
   {
     name: "Email",
@@ -67,8 +67,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Rajat Mishra, a Web Developer at{" "}
-      <Logo
+      I'm Rajat Mishra, a Web Developer at AllCreates{" "}
+    <Logo
         dark
         icon="/trademarks/wordmark-dark.svg"
         style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}

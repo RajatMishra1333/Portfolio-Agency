@@ -1,71 +1,56 @@
 ---
-title: "Create, edit and delete blog posts"
-summary: "Create, edit and delete posts in the blog section of your Magic Portfolio."
-publishedAt: "2025-03-17"
-tag: "Magic Portfolio"
+title: "Revolutionizing Local Bookings: AI on WhatsApp"
+summary: "How we built a seamless AI appointment manager that turns WhatsApp chats into confirmed bookings for local businesses."
+publishedAt: "2025-11-24"
+tag: "Case Study"
 ---
 
-## Manage posts
+## The Problem with Manual Booking
 
-You can create, edit and delete posts by adding, modifying or removing `*.mdx` files in the `src/app/blog/posts` directory.
+Local businesses lose revenue every day simply because they miss calls or take too long to reply to messages. We realized that the traditional way of managing appointments—pen and paper or clunky software—was failing.
 
-## Frontmatter
+At **allcreates**, we decided to build a solution on the platform people already trust: **WhatsApp**.
 
-The frontmatter is used to set the post's metadata: title, description, image, and tags. It's used in the post's page and in meta- and open graph tags.
+## The Solution: AI + Real-Time Dashboard
+
+We developed an AI-powered assistant that interacts with customers via WhatsApp. It handles queries, checks availability, and books slots without human intervention.
+
+The system ensures:
+1.  **Zero missed customers:** The AI responds instantly, 24/7.
+2.  **Automated Organization:** Every chat is converted into a structured entry on a real-time dashboard.
+3.  **Time Savings:** Business owners can focus on service, not scheduling.
+
+## Technical Implementation
+
+We utilized the MERN stack to handle the real-time data flow. Below is a glimpse of how we structure the appointment schema to ensure data integrity between the WhatsApp webhook and our dashboard.
 
 <CodeBlock
     marginBottom="16"
     codes={[
       {
         code:
-`---
-title: "Arriving to a new milestone in my career"
-publishedAt: "2024-04-08"
-image: "/images/gallery/img-02.jpg"
-summary: "Every career is a journey, filled with challenges, growth, and those significant moments that mark a shift in our path."
-tag: "Journal"
----`,
-        language: "tsx",
-        label: "src/app/blog/posts/post-1.mdx"
+`const appointmentSchema = new mongoose.Schema({
+  businessId: { type: mongoose.Schema.Types.ObjectId, ref: 'Business' },
+  customerName: { type: String, required: true },
+  whatsappNumber: { type: String, required: true },
+  bookingTime: { type: Date, required: true },
+  status: { 
+    type: String, 
+    enum: ['pending', 'confirmed', 'cancelled'], 
+    default: 'confirmed' 
+  },
+  aiSummary: { type: String } // Context from the chat
+}, { timestamps: true });`,
+        language: "javascript",
+        label: "server/models/Appointment.js"
       }
     ]}
 />
 
-## MDX syntax
+## Why WhatsApp?
 
-You can use MDX to write the content of your posts. It helps you write rich and dynamic content with minimal code. Some MDX elements will be automatically transformed to Once UI components to integrate better in the design and add additional functionality.
+Users don't want to download new apps. By integrating directly into WhatsApp, we reduced friction to near zero. The AI analyzes the natural language of the user to extract the intent (booking, rescheduling, or inquiry) and maps it to the business's available slots.
 
-## Custom components
+## Future Roadmap
 
-You can use custom components in MDX files, but you need to import them first in the `src/components/mdx.tsx` file.
-
-<CodeBlock
-    marginBottom="16"
-    highlight="11-12"
-    codes={[
-      {
-        code:
-`const components = {
-    p: createParagraph as any,
-    h1: createHeading(1) as any,
-    h2: createHeading(2) as any,
-    h3: createHeading(3) as any,
-    h4: createHeading(4) as any,
-    h5: createHeading(5) as any,
-    h6: createHeading(6) as any,
-    img: createImage as any,
-    a: CustomLink as any,
-    Table,
-    CodeBlock,
-};`,
-        language: "tsx",
-        label: "src/components/mdx.tsx"
-      }
-    ]}
-/>
-
-As you can see, the `Table` and `CodeBlock` components are already imported and available for use. You can add more by simply importing them to this file and passing them to the `components` object.
-
-## Hot reload
-
-Hot reload of MDX files is currently not supported, but we're working on it.
+We are currently rolling this out to pilot businesses in Ludhiana. The next phase involves adding payment integration directly within the chat interface to reduce no-shows.
