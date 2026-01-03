@@ -68,12 +68,16 @@ const home: Home = {
   subline: (
     <>
       I'm Rajat Mishra, a Web Developer at AllCreates{" "}
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      <Logo
+        dark
+        icon="/trademarks/wordmark-dark.svg"
+        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
+      />
     </>
   ),
 };
 
+// ... rest of your file remains EXACTLY the same (about, blog, work, gallery)
 const about: About = {
   path: "/about",
   label: "About",
@@ -100,7 +104,7 @@ const about: About = {
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
@@ -122,7 +126,6 @@ const about: About = {
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "AllCreates Project",
@@ -178,7 +181,7 @@ const about: About = {
         tags: [
           { name: "React.js", icon: "react" },
           { name: "Node.js", icon: "nodejs" },
-          { name: "Express.js", icon: "express" }, // Icon might not exist
+          { name: "Express.js", icon: "express" },
           { name: "Tailwind CSS", icon: "tailwind" },
           { name: "Bootstrap", icon: "bootstrap" },
         ],
@@ -194,7 +197,7 @@ const about: About = {
           { name: "MySQL", icon: "mysql" },
           { name: "Git", icon: "git" },
           { name: "GitHub", icon: "github" },
-          { name: "DevOps", icon: "devops" }, // Icon might not exist
+          { name: "DevOps", icon: "devops" },
         ],
         images: [],
       },
@@ -208,21 +211,20 @@ const about: About = {
           { name: "Python", icon: "python" },
           { name: "HTML5", icon: "html" },
           { name: "CSS3", icon: "css" },
-          { name: "SQL", icon: "sql" }, // Icon might not exist
+          { name: "SQL", icon: "sql" },
         ],
         images: [],
       },
     ],
   },
 };
+
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
   title: "Writing about web development and tech...",
   description: `Read what ${person.name} has been up to recently`,
 };
-// Create new blog posts by adding a new .mdx file to app/blog/posts
-// All posts will be listed on the /blog route
 
 const work: Work = {
   path: "/work",
@@ -230,6 +232,7 @@ const work: Work = {
   title: `Projects – ${person.name}`,
   description: `Full-stack and web projects by ${person.name}`,
 };
+
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
