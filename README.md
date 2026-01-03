@@ -1,104 +1,285 @@
-# AllCreates - Official Agency Website
+import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
-Welcome to the official repository for the AllCreates website. This platform serves as our digital portfolio, showcasing our services, projects, and insights to our clients and the community.
+const person: Person = {
+  firstName: "Rajat",
+  lastName: "Mishra",
+  name: `Rajat Mishra`,
+  role: "full-stack developer",
+  avatar: "/images/avatar.jpg",
+  email: "rajatmishra1333@gmail.com",
+  location: "Asia/Kolkata", // Ludhiana, India ke liye IANA time zone
+  languages: ["English", "Hindi", "Punjabi"],
+};
 
----
+const newsletter: Newsletter = {
+  display: true,
+  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  description: <>My weekly newsletter about web development and technology</>,
+};
 
-## 📋 Table of Contents
+const social: Social = [
+  // Links are automatically displayed.
+  // Import new icons in /once-ui/icons.ts
+  {
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/RajatMishra1333",
+  },
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/in/rajat2458",
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/rajat_2458/",
+  },
+  {
+    name: "Email",
+    icon: "email",
+    link: `mailto:${person.email}`,
+  },
+];
 
-* [About This Project](#-about-this-project)
-* [Tech Stack](#-tech-stack)
-* [Getting Started](#-getting-started)
-* [Contributing](#-contributing)
-* [License](#-license)
-* [Contact](#-contact)
+const home: Home = {
+  path: "/",
+  image: "/images/og/home.jpg",
+  label: "Home",
+  title: `${person.name}'s Portfolio`,
+  description: `Portfolio website showcasing my work as a ${person.role}`,
+  headline: <>Think. Design.
+    Develop. Launch.
+    Repeat.</>,
+  featured: {
+    display: true,
+    title: (
+      <Row gap="12" vertical="center">
+        <strong className="ml-4">AllCreates</strong>{" "}
+        <Line background="brand-alpha-strong" vert height="20" />
+        <Text marginRight="4" onBackground="brand-medium">
+          Featured work
+        </Text>
+      </Row>
+    ),
+    href: "/work/building-once-ui-a-customizable-design-system",
+  },
+  subline: (
+    <>
+      I'm Rajat Mishra, a Web Developer at AllCreates{" "}
+      <Logo
+        dark
+        icon="/trademarks/wordmark-dark.svg"
+        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
+      />
+    </>
+  ),
+};
 
----
+// ... rest of your file remains EXACTLY the same (about, blog, work, gallery)
+const about: About = {
+  path: "/about",
+  label: "About",
+  title: `About – ${person.name}`,
+  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  tableOfContent: {
+    display: true,
+    subItems: false,
+  },
+  avatar: {
+    display: true,
+  },
+  calendar: {
+    display: true,
+    link: "https://wa.me/917800582481?text=HII!! I want to sechedule a call meeting with you.",
+  },
+  intro: {
+    display: true,
+    title: "Introduction",
+    description: (
+      <>
+        Rajat is a Ludhiana-based full-stack developer with hands-on experience in building responsive web applications and e-commerce platforms. Proficient in the MERN stack, he has a strong focus on clean code practices and scalable architecture
+      </>
+    ),
+  },
+  work: {
+    display: true,
+    title: "Work Experience",
+    experiences: [
+      {
+        company: "FLY",
+        timeframe: "2022 - Present",
+        role: "Senior Design Engineer",
+        achievements: [
+          <>
+            Designed and developed a professional showcase website for a
+            Chartered Accountant to highlight services and achievements.
+          </>,
+          <>
+            Implemented a clean, responsive, and SEO-friendly UI for mobile
+            and desktop.
+          </>,
+          <>
+            Integrated interactive sections for client testimonials, contact
+            forms, and service inquiries.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "AllCreates Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Wellship Clinic",
+        timeframe: "May 2023 - Dec 2023",
+        role: "Full-Stack Developer",
+        achievements: [
+          <>
+            Designed and developed a responsive healthcare website from scratch
+            (SDLC).
+          </>,
+          <>
+            Implemented appointment booking, services section, and Google
+            Maps API.
+          </>,
+          <>
+            Built contact forms with backend integration for data collection.
+          </>,
+        ],
+        images: [],
+      },
+    ],
+  },
+  studies: {
+    display: true,
+    title: "Education",
+    institutions: [
+      {
+        name: "Bachelor of Commerce (B.Com)",
+        description: <>Aug 2024 - Pursuing (CGPA: 7.1)</>,
+      },
+      {
+        name: "Senior Secondary School",
+        description: <>Aug 2023 - Jul 2024 (71%)</>,
+      },
+    ],
+  },
+  technical: {
+    display: true,
+    title: "Technical Skills",
+    skills: [
+      {
+        title: "Frameworks & Libraries",
+        description: (
+          <>Proficient in the MERN stack and modern styling libraries.</>
+        ),
+        tags: [
+          { name: "React.js", icon: "react" },
+          { name: "Node.js", icon: "nodejs" },
+          { name: "Express.js", icon: "express" },
+          { name: "Tailwind CSS", icon: "tailwind" },
+          { name: "Bootstrap", icon: "bootstrap" },
+        ],
+        images: [],
+      },
+      {
+        title: "Database & Tools",
+        description: (
+          <>Experienced with NoSQL/SQL databases and development tools.</>
+        ),
+        tags: [
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "MySQL", icon: "mysql" },
+          { name: "Git", icon: "git" },
+          { name: "GitHub", icon: "github" },
+          { name: "DevOps", icon: "devops" },
+        ],
+        images: [],
+      },
+      {
+        title: "Programming Languages",
+        description: (
+          <>Core languages for web and backend development.</>
+        ),
+        tags: [
+          { name: "JavaScript", icon: "javascript" },
+          { name: "Python", icon: "python" },
+          { name: "HTML5", icon: "html" },
+          { name: "CSS3", icon: "css" },
+          { name: "SQL", icon: "sql" },
+        ],
+        images: [],
+      },
+    ],
+  },
+};
 
-## 🚀 About This Project
+const blog: Blog = {
+  path: "/blog",
+  label: "Blog",
+  title: "Writing about web development and tech...",
+  description: `Read what ${person.name} has been up to recently`,
+};
 
-This website is built to be a fast, responsive, and content-rich experience for our visitors. It details who we are, what we do, and the value we bring to our clients.
+const work: Work = {
+  path: "/work",
+  label: "Work",
+  title: `Projects – ${person.name}`,
+  description: `Full-stack and web projects by ${person.name}`,
+};
 
-### ✨ Key Features
+const gallery: Gallery = {
+  path: "/gallery",
+  label: "Gallery",
+  title: `Photo gallery – ${person.name}`,
+  description: `A photo collection by ${person.name}`,
+  images: [
+    {
+      src: "/images/gallery/horizontal-1.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/vertical-4.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/horizontal-3.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/vertical-1.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/vertical-2.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/horizontal-2.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/horizontal-4.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/vertical-3.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+  ],
+};
 
-* **Services Page:** A detailed breakdown of the services we offer.
-* **Portfolio Showcase:** A dynamic, MDX-based gallery and case study section for our best work.
-* **Blog / Insights:** Articles, news, and insights from our team.
-* **About Us:** An introduction to our team, mission, and values.
-
----
-
-## 🛠️ Tech Stack
-
-This project is built with a modern, high-performance tech stack:
-
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)
-![Biome](https://img.
-shields.io/badge/Biome-60A5FA?style=for-the-badge&logo=biome&logoColor=black)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
-
----
-
-## 🏃 Getting Started
-
-Is project ko apne local machine par chalaane ke liye, yeh steps follow karein.
-
-### Prerequisites
-
-Aapke system mein Node.js (v18.17+ recommended) aur npm install hona chahiye.
-
-### Installation & Running
-
-1.  **Repository Clone Karein:**
-    ```bash
-    git clone [https://github.com/RajatMishra1333/Portfolio-Agency.git](https://github.com/RajatMishra1333/Portfolio-Agency.git)
-    cd Portfolio-Agency
-    ```
-
-2.  **Dependencies Install Karein:**
-    ```bash
-    npm install
-    ```
-
-3.  **Development Server Shuru Karein:**
-    ```bash
-    npm run dev
-    ```
-
-4.  Browser kholein aur [http://localhost:3000](http://localhost:3000) par jaayein.
-
----
-
-## 🤝 Contributing
-
-Contributions ka hamesha swagat hai! Agar aap is project mein yogdaan dena chahte hain, toh kripya yeh steps follow karein:
-
-1.  Project ko Fork karein.
-2.  Apni Feature Branch banayein (`git checkout -b feature/AmazingFeature`).
-3.  Apne changes Commit karein (`git commit -m 'Add some AmazingFeature'`).
-4.  Branch par Push karein (`git push origin feature/AmazingFeature`).
-5.  Ek Pull Request kholein.
-
----
-
-## 📜 License
-
-Yeh project **MIT License** ke antargat distributed hai. Adhik jaankari ke liye `LICENSE.md` file dekhein.
-
----
-
-## 📧 Contact
-
-Rajat Mishra - [@rajat2458 (LinkedIn)](https://www.linkedin.com/in/rajat2458) - rajatmishra1333@gmail.com
-
-Project Link: [https://github.com/RajatMishra1333/Portfolio-Agency](https://github.com/RajatMishra1333/Portfolio-Agency)
-
-<br/>
-
-<p align="center">
-  © 2025, AllCreates. All Rights Reserved.
-</p>
+export { person, social, newsletter, home, about, blog, work, gallery };
