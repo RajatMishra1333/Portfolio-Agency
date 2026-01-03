@@ -64,7 +64,11 @@ const home: Home = {
   subline: (
     <>
       I'm Rajat Mishra, a Web Developer at AllCreates{" "}
-     
+      <Logo
+        dark
+        icon="/trademarks/wordmark-dark.svg"
+        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
+      />
     </>
   ),
 };
