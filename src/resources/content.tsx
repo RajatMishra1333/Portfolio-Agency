@@ -8,7 +8,7 @@ const person: Person = {
   role: "full-stack developer",
   avatar: "/images/avatar.jpg",
   email: "rajatmishra1333@gmail.com",
-  location: "Asia/Kolkata", // Ludhiana, India ke liye IANA time zone
+  location: "Asia/Kolkata",
   languages: ["English", "Hindi", "Punjabi"],
 };
 
@@ -19,8 +19,6 @@ const newsletter: Newsletter = {
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
@@ -49,9 +47,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Think. Design.
-    Develop. Launch.
-    Repeat.</>,
+  headline: <>Think. Design. Develop. Launch. Repeat.</>,
   featured: {
     display: true,
     title: (
@@ -77,7 +73,6 @@ const home: Home = {
   ),
 };
 
-// ... rest of your file remains EXACTLY the same (about, blog, work, gallery)
 const about: About = {
   path: "/about",
   label: "About",
