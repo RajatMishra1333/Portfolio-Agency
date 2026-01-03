@@ -68,14 +68,6 @@ const home: Home = {
   subline: (
     <>
       I'm Rajat Mishra, a Web Developer at AllCreates{" "}
-<<<<<<< HEAD
-    <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-=======
->>>>>>> 36cdf740d53ba74972085918f426f79089a540ae
       , where I craft intuitive
       <br /> user experiences. After hours, I build my own projects.
     </>
