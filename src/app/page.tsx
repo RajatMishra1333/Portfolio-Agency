@@ -23,12 +23,7 @@ export async function generateMetadata() {
     baseURL: baseURL,
     path: home.path,
     image: home.image,
-     additionalMetaTags: [
-      {
-        property: "og:url",
-        content: `${baseURL}${home.path}` // Adjust this path based on your requirements
-      }
-    ]
+   
   });
 }
 
