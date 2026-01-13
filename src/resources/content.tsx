@@ -1,43 +1,56 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Logo, Row, Text } from "@once-ui-system/core";
+import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Rajat",
   lastName: "Mishra",
-  name: `Rajat Mishra`,
-  role: "full-stack developer",
-  avatar: "/images/avatar.jpg",
+  name: `AllCreates`,
+  role: "Design Developer",
+  avatar: "",
   email: "rajatmishra1333@gmail.com",
-  location: "Asia/Kolkata",
-  languages: ["English", "Hindi", "Punjabi"],
+  location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Hindi" , "Punjabi"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about web development and technology</>,
+  description: <>My weekly newsletter about creativity and engineering</>,
 };
 
 const social: Social = [
+  // Links are automatically displayed.
+  // Import new icons in /once-ui/icons.ts
+  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/RajatMishra1333",
+    essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/rajat2458",
+    link: "https://www.linkedin.com/rajat_2458",
+    essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/rajat_2458/",
+    link: "https://www.instagram.com/rajat_2458",
+    essential: false,
+  },
+  {
+    name: "Threads",
+    icon: "threads",
+    link: "https://www.threads.com/rajat_2458",
+    essential: true,
   },
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: `mailto:{rajatmishra1333@gmail.com}`,
+    essential: true,
   },
 ];
 
@@ -63,13 +76,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Rajat Mishra, a Web Developer at AllCreates{" "}
-      <Logo
-        dark
-        icon="public/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-    </>
+    I'm Rajat, a design developer at <Text as="span" size="xl" weight="strong">AllCreates</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+</>
   ),
 };
 
@@ -87,70 +95,60 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://wa.me/917800582481?text=HII!! I want to sechedule a call meeting with you.",
+    link: "https://cal.com",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Rajat is a Ludhiana-based full-stack developer with hands-on experience in building responsive web applications and e-commerce platforms. Proficient in the MERN stack, he has a strong focus on clean code practices and scalable architecture
+         Rajat is a Ludhiana-based full-stack developer with hands-on experience in building responsive web applications and e-commerce platforms. Proficient in the MERN stack, he has a strong focus on clean code practices and scalable architecture
       </>
     ),
   },
   work: {
-    display: true,
+    display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "WHY",
+        timeframe: "2023 - 2024",
+        role: "Full Stack Site ",
         achievements: [
           <>
-            Designed and developed a professional showcase website for a
-            Chartered Accountant to highlight services and achievements.
+            Redesigned the UI/UX for the WHY platform, resulting in a 20% increase in user
+            engagement and 30% faster load times.
           </>,
           <>
-            Implemented a clean, responsive, and SEO-friendly UI for mobile
-            and desktop.
-          </>,
-          <>
-            Integrated interactive sections for client testimonials, contact
-            forms, and service inquiries.
+            Spearheaded the integration of AI tools into design workflows, enabling designers to
+            iterate 50% faster.
           </>,
         ],
         images: [
+          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "AllCreates Project",
+            alt: "AllCreates",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Wellship Clinic",
-        timeframe: "May 2023 - Dec 2023",
-        role: "Full-Stack Developer",
+        company: "BigsMall",
+        timeframe: "2024 - 2024",
+        role: "UI Improvement",
         achievements: [
           <>
-            Designed and developed a responsive healthcare website from scratch
-            (SDLC).
-          </>,
-          <>
-            Implemented appointment booking, services section, and Google
-            Maps API.
-          </>,
-          <>
-            Built contact forms with backend integration for data collection.
-          </>,
+            Developed a design system that unified the brand across multiple platforms, improving
+            design consistency by 40%.
+          </>
         ],
         images: [],
       },
     ],
   },
-  studies: {
+   studies: {
     display: true,
     title: "Education",
     institutions: [
@@ -217,15 +215,19 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about web development and tech...",
+  title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
+  // Create new blog posts by adding a new .mdx file to app/blog/posts
+  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Full-stack and web projects by ${person.name}`,
+  description: `Design and dev projects by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
@@ -233,6 +235,8 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
+  // Images by https://lorant.one
+  // These are placeholder images, replace with your own
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
