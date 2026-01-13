@@ -24,7 +24,7 @@ const social: Social = [
   // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
-    icon: "github",
+    icon: "Github",
     link: "https://github.com/RajatMishra1333",
     essential: true,
   },
@@ -49,7 +49,8 @@ const social: Social = [
   {
     name: "Email",
     icon: "email",
-    link: `mailto:{rajatmishra1333@gmail.com}`,
+    link: "mailto:rajatmishra1333@gmail.com",
+,
     essential: true,
   },
 ];
