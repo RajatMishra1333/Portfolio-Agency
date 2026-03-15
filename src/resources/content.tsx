@@ -1,5 +1,5 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Logo, Row, Text } from "@once-ui-system/core";
+import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Rajat",
@@ -8,7 +8,7 @@ const person: Person = {
   role: "full-stack developer",
   avatar: "/images/avatar.jpg",
   email: "rajatmishra1333@gmail.com",
-  location: "Asia/Kolkata", // Ludhiana, India ke liye IANA time zone
+  location: "Asia/Kolkata",
   languages: ["English", "Hindi", "Punjabi"],
 };
 
@@ -19,8 +19,6 @@ const newsletter: Newsletter = {
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
@@ -49,14 +47,20 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Think. Design.
-    Develop. Launch.
-    Repeat.</>,
+  headline: (
+    <>
+      Think. Design.
+      <br />
+      Develop. Launch.
+      <br />
+      Repeat.
+    </>
+  ),
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">AllCreates</strong>{" "}
+        <strong className="ml-4">AllCreates</strong>
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -67,16 +71,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Rajat Mishra, a Web Developer at AllCreates{" "}
-<<<<<<< HEAD
-    <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-=======
->>>>>>> 36cdf740d53ba74972085918f426f79089a540ae
-      , where I craft intuitive
+      I'm Rajat Mishra, a Web Developer at AllCreates, where I craft intuitive
       <br /> user experiences. After hours, I build my own projects.
     </>
   ),
@@ -103,26 +98,28 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Rajat is a Ludhiana-based full-stack developer with hands-on experience in building responsive web applications and e-commerce platforms. Proficient in the MERN stack, he has a strong focus on clean code practices and scalable architecture
+        Rajat is a Ludhiana-based full-stack developer with hands-on experience
+        in building responsive web applications and e-commerce platforms.
+        Proficient in the MERN stack, he has a strong focus on clean code
+        practices and scalable architecture.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Metro Max",
+        timeframe: "2025 - Present",
+        role: "Graphic & Web Designer",
         achievements: [
           <>
-            Designed and developed a professional showcase website for a
-            Chartered Accountant to highlight services and achievements.
+           Design and developed for a leading signage company, creating a modern website to showcase work and services.
           </>,
           <>
-            Implemented a clean, responsive, and SEO-friendly UI for mobile
-            and desktop.
+            Implemented a clean, responsive, and SEO-friendly UI for mobile and
+            desktop.
           </>,
           <>
             Integrated interactive sections for client testimonials, contact
@@ -130,9 +127,35 @@ const about: About = {
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/gallery/Gemini.png",
+            alt: "AllCreates Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Tax Consultant",
+        timeframe: "2025 - Present",
+        role: "Web Developer",
+        achievements: [
+          <>
+            Designed and developed a professional showcase website for a
+            Chartered Accountant to highlight services and achievements.
+          </>,
+          <>
+            Implemented a clean, responsive, and SEO-friendly UI for mobile and
+            desktop.
+          </>,
+          <>
+            Integrated interactive sections for client testimonials, contact
+            forms, and service inquiries.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/gallery/TaxConsultant.png",
             alt: "AllCreates Project",
             width: 16,
             height: 9,
@@ -141,7 +164,7 @@ const about: About = {
       },
       {
         company: "Wellship Clinic",
-        timeframe: "May 2023 - Dec 2023",
+        timeframe: "May 2024 - Dec 2024",
         role: "Full-Stack Developer",
         achievements: [
           <>
@@ -149,8 +172,8 @@ const about: About = {
             (SDLC).
           </>,
           <>
-            Implemented appointment booking, services section, and Google
-            Maps API.
+            Implemented appointment booking, services section, and Google Maps
+            API.
           </>,
           <>
             Built contact forms with backend integration for data collection.
@@ -174,6 +197,7 @@ const about: About = {
       },
     ],
   },
+
   technical: {
     display: true,
     title: "Technical Skills",
@@ -186,7 +210,6 @@ const about: About = {
         tags: [
           { name: "React.js", icon: "react" },
           { name: "Node.js", icon: "nodejs" },
-          { name: "Express.js", icon: "express" }, // Icon might not exist
           { name: "Tailwind CSS", icon: "tailwind" },
           { name: "Bootstrap", icon: "bootstrap" },
         ],
@@ -199,10 +222,9 @@ const about: About = {
         ),
         tags: [
           { name: "MongoDB", icon: "mongodb" },
-          { name: "MySQL", icon: "mysql" },
           { name: "Git", icon: "git" },
           { name: "GitHub", icon: "github" },
-          { name: "DevOps", icon: "devops" }, // Icon might not exist
+          { name: "DevOps", icon: "devops" },
         ],
         images: [],
       },
@@ -216,21 +238,19 @@ const about: About = {
           { name: "Python", icon: "python" },
           { name: "HTML5", icon: "html" },
           { name: "CSS3", icon: "css" },
-          { name: "SQL", icon: "sql" }, // Icon might not exist
         ],
         images: [],
       },
     ],
   },
 };
+
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
   title: "Writing about web development and tech...",
   description: `Read what ${person.name} has been up to recently`,
 };
-// Create new blog posts by adding a new .mdx file to app/blog/posts
-// All posts will be listed on the /blog route
 
 const work: Work = {
   path: "/work",
@@ -238,6 +258,7 @@ const work: Work = {
   title: `Projects – ${person.name}`,
   description: `Full-stack and web projects by ${person.name}`,
 };
+
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
