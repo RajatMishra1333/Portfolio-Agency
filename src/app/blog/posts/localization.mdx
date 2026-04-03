@@ -25,18 +25,11 @@ Since most users order food from their phones, I designed the grid system to be 
 
 The core complexity of a food app is the cart. It needs to persist across pages and update instantly. Here is a snippet of the React Context I built to handle the "Add to Cart" functionality.
 
-<CodeBlock
-    marginBottom="16"
-    highlight="8-10"
-    codes={[
-      {
-        code:
-`export const CartProvider = ({ children }) => {
+```jsx
+export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-
   const addToCart = (item) => {
     setCart((prev) => {
-      // Check if item already exists
       const existing = prev.find((i) => i.id === item.id);
       if (existing) {
         return prev.map((i) =>
@@ -46,3 +39,5 @@ The core complexity of a food app is the cart. It needs to persist across pages 
       return [...prev, { ...item, qty: 1 }];
     });
   };
+};
+```
